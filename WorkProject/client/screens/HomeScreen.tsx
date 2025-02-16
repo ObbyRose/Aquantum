@@ -44,7 +44,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         <View style={styles.container}>
             <Text style={styles.header}>Bitcoin Live Price</Text>
             {loading ? (
-                <ActivityIndicator size="large" color="#0000ff" />
+                <ActivityIndicator style= {styles.loader} size="large" color="#0000ff" />
             ) : (
                 bitcoinPrice && Number(bitcoinPrice) !== 0 && (
                     <Text style={styles.price}>{"$" + Number(bitcoinPrice).toLocaleString()}</Text>
@@ -70,6 +70,10 @@ const styles = StyleSheet.create({
         fontSize: 32,
         marginVertical: 20,
     },
+    loader:{
+        marginBottom: 20,
+        marginTop: 20,
+    }
 });
 
 export default HomeScreen;
