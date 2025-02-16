@@ -15,7 +15,7 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
       });
       if (response.status === 201) {
         Alert.alert('Success', 'Signup successful!');
-        navigation.replace('Login');
+        navigation.replace('Home');
       }
     } catch (error) {
       console.error('Signup error:', error);
