@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import axios from 'axios';
-import { Props } from './LoginScreen';
+import { Props } from 'types/Types';
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
     const [bitcoinPrice, setBitcoinPrice] = useState<string | null>(null);
