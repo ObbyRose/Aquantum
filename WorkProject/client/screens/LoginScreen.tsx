@@ -3,18 +3,18 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 
-type Props = {
+export type Props = {
   navigation: any;
 };
 
 const LoginScreen: React.FC<Props> = ({ navigation }) => {
-  const [username, setUsername] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
-        username,
+      const response = await axios.post('http://192.168.31.216:5000/api/users/login', {
+        email,
         password,
       });
       if (response.status === 200) {
@@ -32,13 +32,13 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
       <Text style={styles.header}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
+        placeholder="Please Enter Your Email"
+        value={email}
+        onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Please Enter Your Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry

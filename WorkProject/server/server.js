@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(frontendPath));
 app.use(
     cors({
-        origin: "https://localhost:8081",
+        origin: ["http://localhost:8081", "http://192.168.31.216:8081"],
         methods: ["GET", "POST", "PUT", "DELETE"], 
         credentials: true,
     })

@@ -7,13 +7,13 @@ type Props = {
 };
 
 const SignupScreen: React.FC<Props> = ({ navigation }) => {
-  const [username, setUsername] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/signup', {
-        username,
+      const response = await axios.post('http://192.168.31.216:5000/api/users/signup', {
+        email,
         password,
       });
       if (response.status === 201) {
@@ -31,13 +31,13 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
       <Text style={styles.header}>Sign Up</Text>
       <TextInput
         style={styles.input}
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
+        placeholder="Please Enter Your Email"
+        value={email}
+        onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="Please Enter A Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
