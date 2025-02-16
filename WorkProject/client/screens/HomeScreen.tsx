@@ -1,4 +1,3 @@
-// screens/HomeScreen.tsx
 import React, { useState, useEffect } from 'react';
 import { View, Text, Button, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import axios from 'axios';
