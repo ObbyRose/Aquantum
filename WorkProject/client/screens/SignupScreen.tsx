@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from 'Navigation';
 
-type Props = {
-  navigation: any;
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+
+export type Props = {
+  navigation: HomeScreenNavigationProp;
 };
 
 const SignupScreen: React.FC<Props> = ({ navigation }) => {
