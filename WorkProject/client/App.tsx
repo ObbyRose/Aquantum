@@ -1,13 +1,9 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
+// App.tsx
+import React from 'react';
+import Navigation from './Navigation';  // Import navigation
 
-import './global.css';
+const App: React.FC = () => {
+  return <Navigation />;
+};
 
-export default function App() {
-  return (
-    <>
-      <ScreenContent title="Home" path="App.tsx" />
-      <StatusBar style="auto" />
-    </>
-  );
-}
+export default App;
