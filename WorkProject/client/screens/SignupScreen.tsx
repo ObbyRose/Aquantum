@@ -18,7 +18,7 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
       });
       if (response.status === 201) {
         Alert.alert('Success', 'Signup successful!');
-        navigation.replace('Login'); // Navigate to Login screen after successful signup
+        navigation.replace('Login');
       }
     } catch (error) {
       console.error('Signup error:', error);
@@ -42,7 +42,13 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="Sign Up" onPress={handleSignup} />
+      <View style={styles.button}>
+        <Button title="Sign Up" onPress={handleSignup} />
+      </View>
+      <Text style={styles.text}> Already have an account? 
+        <Text style={{color: "gray"}} onPress={() => navigation.navigate('Login')}> Log In
+        </Text>
+      </Text>
     </View>
   );
 };
@@ -66,6 +72,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingHorizontal: 10,
   },
+  button: {
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 16,
+  }
 });
 
 export default SignupScreen;
